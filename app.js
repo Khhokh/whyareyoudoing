@@ -38,7 +38,8 @@ app.use(
       defaultSrc: ["'self'"],
       scriptSrc: ["'self'", "https://cdnjs.cloudflare.com"],
       styleSrc: ["'self'", "https://fonts.googleapis.com"],
-      fontSrc: ["'self'", "https://fonts.gstatic.com"]
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      connectSrc: ["'self'", "http://127.0.0.1:3001"] 
     }
   })
 );
