@@ -5,13 +5,13 @@ const reviewController = require('../controllers/reviewController');
 const router = express.Router();
 
 // Public Routes (No authentication needed)
-router.post('/appoint',authController.isLoggedIn,authController.restrictTo('user'),
+router.post('/appoint',authController.restrictTo('user'),
         reviewController.setTourUserIds,appointmentController.createAppointment); // Creating an appointment
-router.get('/', authController.protect, appointmentController.getAllAppointments); // Get all appointments
-router.get('/:id', authController.protect, appointmentController.getAppointment); // Get appointment by ID
+router.get('/', appointmentController.getAllAppointments); // Get all appointments
+router.get('/:id', appointmentController.getAppointment); // Get appointment by ID
 
 // Protect all the routes below this line
-router.use(authController.protect); 
+
 
 // // User-specific Routes
 // router.get('/my-appointments', appointmentController.getMyAppointments); // Get appointments for logged-in user
