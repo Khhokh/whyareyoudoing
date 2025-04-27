@@ -1,0 +1,285 @@
+:root {
+    --primary: #0b6e54;
+    --primary-light: #222327;
+    --secondary: #34d399;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --gray: #94a3b8;
+    --error: #ef4444;
+}
+
+
+.mainWrapper {
+    display: flex;
+    width: 100%;
+    max-width: 957px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    margin: 53px auto;
+    height: 76%;
+}
+
+.brandSidebar {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    font-size: 14px;
+}
+
+.brandIdentity {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.brandSymbol {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-weight: 900;
+}
+
+.welcomeMessage {
+    margin-bottom: 2rem;
+}
+
+.welcomeHeading {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    color: white;
+}
+
+.welcomeDescription {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.userFeedback {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: auto;
+}
+
+.feedbackQuote {
+    margin-bottom: 1rem;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.feedbackSource {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.userInitials {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.userDetails {
+    font-weight: 600;
+}
+
+.userPosition {
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.formSection {
+    flex: 1;
+    padding: 3rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formIntro {
+    margin-bottom: 2.5rem;
+}
+
+.formTitle {
+    font-size: 2rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.formSubtitle {
+    color: var(--gray);
+}
+
+.authForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.inputBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputLabel {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.inputField {
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.inputField:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 111, 220, 0.1);
+}
+
+.formSettings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.persistLogin {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkboxInput {
+    accent-color: var(--primary);
+}
+
+.resetPasswordLink {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.resetPasswordLink:hover {
+    text-decoration: underline;
+}
+
+.submitButton {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submitButton:hover {
+    background-color: var(--primary-light);
+}
+
+.altAuthMethods {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.dividerText {
+    color: var(--gray);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.dividerText::before,
+.dividerText::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #e2e8f0;
+}
+
+.dividerText::before {
+    left: 0;
+}
+
+.dividerText::after {
+    right: 0;
+}
+
+.externalAuthOptions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.externalAuthButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.externalAuthButton:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.signupPrompt {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--gray);
+}
+
+.signupLink {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signupLink:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .mainWrapper {
+        flex-direction: column;
+    }
+    
+    .brandSidebar {
+        display: none;
+    }
+}

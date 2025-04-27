@@ -1,0 +1,66 @@
+link(rel="stylesheet", href="/css/stylelog.css")
+link(rel="stylesheet", href="/css/style.css")
+link(rel="stylesheet", href="/css/styles.css")
+.mainWrapper
+    .brandSidebar
+        div
+            .brandIdentity
+                .brandSymbol A
+                span Aurora
+            .welcomeMessage
+                h1.welcomeHeading Welcome to the Future of Digital Experience
+                p.welcomeDescription Access your personalized dashboard and unlock unlimited possibilities with our intuitive platform.
+        .userFeedback
+            p.feedbackQuote "Aurora has completely transformed how our team collaborates. The intuitive interface and powerful features have boosted our productivity by 40%."
+            .feedbackSource
+                .userInitials SJ
+                div
+                    h4.userDetails Sarah Johnson
+                    p.userPosition Product Manager at TechCorp
+    .formSection
+        .formIntro
+            h2.formTitle Log in to your account
+            p.formSubtitle Enter your credentials to access your dashboard
+        form.authForm.form--login 
+            .inputBlock
+                label.inputLabel(for="email") Email Address
+                input#email1.form__input(type="email" placeholder="name@company.com" required)
+            .inputBlock
+                label.inputLabel(for="password") Password
+                input#password1.form__input(type="password" placeholder="••••••••" required)
+            .formSettings
+                .persistLogin
+                    input#remember.checkboxInput(type="checkbox")
+                    label(for="remember") Remember me
+                a.resetPasswordLink(href="#") Forgot password?
+            button.submitButton.btn Login
+        .altAuthMethods
+            p.dividerText Or continue with
+            .externalAuthOptions
+                button.externalAuthButton Google
+                button.externalAuthButton Facebook
+                button.externalAuthButton LinkedIn
+        .signupPrompt
+            | Don't have an account? 
+            a.signupLink(href="#") Create one
+script(type="module",src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.8.4/axios.min.js')
+script(type="module", src='/js/login.js')
+
+
+//- extends base 
+
+//- block content 
+//-     main.main
+//-         .login-form
+//-             h2.heading-secondary.ma-bt-lg Log into your account
+//-             form.form.form--login
+//-                 .form__group
+//-                     label.form__label(for='email') Email address
+//-                     input#email1.form__input(type='email', placeholder='you@example.com', required)
+//-                 .form__group.ma-bt-md
+//-                     label.form__label(for='password') Password
+//-                     input#password1.form__input(type='password', placeholder='••••••••', required, minlength='8')
+//-                 .form__group
+//-                     button.btn.btn--green Login
+
+

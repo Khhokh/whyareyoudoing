@@ -1,0 +1,102 @@
+extends baseEmail
+
+
+block content
+  p Hi #{firstName},
+  p Your appointment has been booked successfully
+
+  .appointment-letter
+    .qr-code
+      p QR Code
+      br
+      p for appointment
+
+    .header
+      h1.clinic-name #{clinicName || 'HealthCare Medical Center'}
+      .clinic-details
+        p #{clinicAddress || '123 Healing Street, Wellness City, HC 12345'}
+        p Phone: #{clinicPhone || '(555) 123-4567'} | Email: #{clinicEmail || 'appointments@healthcaremedical.com'}
+        p Website: #{clinicWebsite || 'www.healthcaremedical.com'}
+
+    .date
+      p Date: #{currentDate || 'April 25, 2025'}
+      p Ref: #{appointmentRef || 'APPT-HCM-10057892'}
+
+    .patient-address
+      p #{patientName || 'John Smith'}
+      p #{patientAddress1 || '456 Patient Lane'}
+      p #{patientAddress2 || 'Wellness City, HC 12345'}
+
+    p.greeting Dear #{patientTitle || 'Mr.'} #{patientLastName || 'Smith'},
+
+    .appointment-title
+      h2 Appointment Confirmation
+
+    .content
+      p We are pleased to confirm your appointment at #{clinicName || 'HealthCare Medical Center'}. Your health is our priority, and we look forward to providing you with the highest standard of medical care.
+
+    .appointment-details
+      h3.details-title APPOINTMENT DETAILS
+      .details-row
+        span.details-label Patient Name:
+        span.details-value #{patientName || 'John Smith'}
+      .details-row
+        span.details-label Patient ID:
+        span.details-value #{patientId || 'PT-10057892'}
+      .details-row
+        span.details-label Date:
+        span.details-value #{appointmentDate || 'Monday, May 5, 2025'}
+      .details-row
+        span.details-label Time:
+        span.details-value #{appointmentTime || '10:30 AM'}
+      .details-row
+        span.details-label Doctor:
+        span.details-value #{doctorName || 'Dr. Emily Johnson, MD'}
+      .details-row
+        span.details-label Department:
+        span.details-value #{department || 'Internal Medicine'}
+      .details-row
+        span.details-label Location:
+        span.details-value #{location || 'HealthCare Medical Center, Building A, Floor 3, Room 305'}
+      .details-row
+        span.details-label Purpose:
+        span.details-value #{purpose || 'Follow-up Consultation'}
+
+  .instructions
+    h3.instructions-title IMPORTANT INSTRUCTIONS:
+
+    ul.instruction-list
+      li Please arrive 15 minutes before your scheduled appointment time.
+      li Bring your insurance card, photo ID, and list of current medications.
+      li A mask is required for all patients and visitors in our facility.
+
+    .content
+      p If you have any questions or need further information, please do not hesitate to contact our appointments desk at #{clinicPhone || '(555) 123-4567'} or email #{clinicEmail || 'appointments@healthcaremedical.com'}.
+      p We look forward to seeing you at your appointment.
+
+    .closing
+      p Sincerely,
+      .signature
+        p.signature-name #{coordinatorName || 'Sarah Thompson'}
+        p #{coordinatorTitle || 'Appointments Coordinator'}
+        p #{clinicName || 'HealthCare Medical Center'}
+
+    .footer
+      p This is an auto-generated appointment letter. Please keep this for your records.
+      p You can confirm or reschedule your appointment online at #{clinicWebsite || 'www.healthcaremedical.com'}/appointments using your Patient ID.
+
+  p We're all a big family here, so make sure to upload your user photo so we get to know you a bit better!
+  img(src="https://res.cloudinary.com/doi7fc5vu/image/upload/v1745591177/ChatGPT_Image_Apr_25_2025_07_55_16_PM_b1ysnw.png", alt="email banner")
+
+  table.btn.btn-primary(role="presentation", border="0", cellpadding="0", cellspacing="0")
+    tbody
+      tr
+        td(align="left")
+          table(role="presentation", border="0", cellpadding="0", cellspacing="0")
+            tbody
+              tr
+                td
+                  a(href=url, target="_blank") Upload user photo
+
+  p "Need help scheduling your next appointment or wellness session? We're here to guide you every step of the way!"
+  p Medicat Team, Hello from Hriday 😄 Sreyashi 😉 Prerona 😊 Partha 😀

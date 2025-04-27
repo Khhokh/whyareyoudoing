@@ -1,0 +1,157 @@
+link(rel="stylesheet", href="/css/appointment.css") 
+link(rel="stylesheet", href="/css/alert.css")  
+
+block content 
+    div.container
+        div.appointment-form
+            div.form-header
+                h2 Book Your Appointment
+                p Schedule a visit with our healthcare professionals
+
+                // Show tour name if available
+                if tourName
+                    p(style="font-weight: bold; margin-top: 10px; color: #2e7d32")
+                        | You are booking for: 
+                        span= tourName
+
+            div.form-body
+                div.step-indicator
+                    div.step.active#step1
+                        | 1
+                        span.step-label Personal Info
+                    div.step#step2
+                        | 2
+                        span.step-label Date & Time
+                    div.step#step3
+                        | 3
+                        span.step-label Confirmation
+
+                // Step 1: Personal Information
+                div.form-step.active#step1-content
+                    h3 Personal Information
+                    p Please provide your details below
+
+                    // Hidden input to include tour name in submission
+                    if Doctor
+                        input(type="hidden", name="doctor", value=Doctor)
+
+                    div.form-group
+                        label(for="name") Full Name
+                        input#name.form-control(type="text" placeholder="John Doe" required)
+
+                    div.form-group
+                        label(for="email") Email Address
+                        input#email.form-control(type="email" placeholder="john@example.com" required)
+
+                    div.form-group
+                        label(for="phone") Phone Number
+                        input#phone.form-control(type="tel" placeholder="(123) 456-7890" required)
+
+                    div.form-group
+                        label(for="dob") Date of Birth
+                        input#dob.form-control(type="date" required)
+
+                    div.form-group
+                        label Are you a new patient?
+                        div.radio-group
+                            label.radio-option
+                                input(type="radio" name="patientType" value="new" checked)
+                                | Yes, I'm a new patient
+                            label.radio-option
+                                input(type="radio" name="patientType" value="returning")
+                                | No, I've been here before
+
+                    div.form-group
+                        label(for="insurance") Insurance Provider
+                        select#insurance.form-control
+                            option(value="") Select your insurance
+                            option(value="aetna") Aetna
+                            option(value="bluecross") Blue Cross Blue Shield
+                            option(value="cigna") Cigna
+                            option(value="united") UnitedHealthcare
+                            option(value="medicare") Medicare
+                            option(value="medicaid") Medicaid
+                            option(value="other") Other
+                            option(value="none") Self-pay (No insurance)
+
+                    div.form-group
+                        label(for="appointmentType") Type of Appointment
+                        select#appointmentType.form-control(required)
+                            option(value="") Select appointment type
+                            option(value="checkup") Annual Check-up
+                            option(value="followup") Follow-up Appointment
+                            option(value="illness") Illness or Injury
+                            option(value="consultation") Consultation
+                            option(value="physical") Physical Examination
+                            option(value="vaccination") Vaccination
+                            option(value="other") Other
+
+                // Step 2: Date and Time Selection
+                div.form-step#step2-content
+                    h3 Select Date & Time
+                    p Choose your preferred appointment date and time
+
+                    div.calendar-section
+                        div.calendar-month
+                            button.month-nav.prev-month
+                                i.fas.fa-chevron-left
+                            h4 April 2025
+                            button.month-nav.next-month
+                                i.fas.fa-chevron-right
+
+                        div.calendar-header
+                            each day in ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+                                div= day
+
+                        div.calendar-grid
+                            each day, i in [30, 31, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 1, 2]
+                                div(class=`calendar-day${[0,1,5,6,18,19,26,27].includes(i) ? ' unavailable' : ''}${i === 16 ? ' today selected' : ''}`)= day
+
+                    div.form-group(style="margin-top: 20px;")
+                        label Available Time Slots
+                        div.time-slots
+                            each time, idx in ['9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM']
+                                div(class=`time-slot${[1, 6].includes(idx) ? ' unavailable' : ''}${idx === 4 ? ' selected' : ''}`)= time
+
+                    div.form-group
+                        label(for="notes") Additional Notes (Optional)
+                        textarea#notes.form-control(rows="3" placeholder="Please share any specific concerns or information we should know before your visit")
+
+                // Step 3: Confirmation
+                div.form-step#step3-content
+                    div.confirmation-content
+                        div.confirmation-icon
+                            i.fas.fa-check-circle
+                        h3 Appointment Details
+                        p Please review your appointment information
+
+                        div.appointment-details
+                            h4 Summary
+                            if tourName
+                                div.detail-item
+                                    strong Doctor:
+                                    span#summaryTour= tourName
+                            div.detail-item
+                                strong Patient:
+                                span#summaryPatient John Doe
+                            div.detail-item
+                                strong Date:
+                                span#summaryDate Thursday, April 17, 2025
+                            div.detail-item
+                                strong Time:
+                                span#summaryTime 2:00 PM
+                            div.detail-item
+                                strong Type:
+                                span#summaryType Annual Check-up
+
+                        p(style="margin-top: 20px;")
+                            | A confirmation email will be sent to 
+                            span#summaryEmail john@example.com
+
+                div.form-buttons
+                    button.btn.btn-prev#prevBtn(style="display: none;") Previous
+                    button.btn.btn-next#nextBtn Next
+
+script(type="module", src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.8.4/axios.min.js')
+script(type="module", src="/js/appointment.js") 
+script(type="module", src="/js/login.js")

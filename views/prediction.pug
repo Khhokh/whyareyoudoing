@@ -1,0 +1,15 @@
+block content 
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/style1.css")
+        title Disease Prediction
+
+    body
+        .container
+            h2 Disease Prediction
+            form(action="/predict" method="POST")
+                label(for="symptoms") Enter Symptoms (comma-separated):
+                input#symptoms(type="text" name="symptoms" placeholder="e.g., fever, headache, nausea" required)
+                button(type="submit") Predict
+            .footer Powered by AI | Stay healthy

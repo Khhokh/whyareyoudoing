@@ -1,0 +1,237 @@
+.master-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.split-layout {
+    display: flex;
+    max-width: 850px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.info-segment {
+    background: linear-gradient(150deg, #0b6e54 0%, black 100%);
+    color: #ffffff;
+    padding: 35px 30px;
+    width: 42%;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-segment::after {
+    content: "";
+    background: url('/api/placeholder/400/600');
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+}
+
+.inner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.brand-element {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.brand-symbol {
+    background-color: #ffffff;
+    color: #5e17eb;
+    font-weight: 700;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.5px;
+}
+
+.headline {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: white;
+}
+
+.tagline {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.benefit-list {
+    margin-top: 25px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.benefit-icon {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 12px;
+}
+
+.benefit-desc {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.form-segment {
+    padding: 35px 30px;
+    width: 58%;
+}
+
+.form-header {
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #2d3748;
+    text-align: center;
+    font-weight: 700;
+}
+
+.input-block {
+    margin-bottom: 18px;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 13px;
+}
+
+.text-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.25s;
+    background-color: #f8fafc;
+    color: #2d3748;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+.text-input:focus {
+    border-color: #5e17eb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(94, 23, 235, 0.1);
+    background-color: #ffffff;
+}
+
+.password-meter {
+    display: flex;
+    margin-top: 8px;
+    gap: 3px;
+}
+
+.meter-segment {
+    height: 3px;
+    flex: 1;
+    background-color: #e2e8f0;
+    border-radius: 2px;
+}
+
+.meter-segment.filled {
+    background-color: #5e17eb;
+}
+
+.helper-text {
+    font-size: 11px;
+    color: #718096;
+    margin-top: 6px;
+}
+
+.action-button {
+    background: linear-gradient(to right, #0b6e54, #202121);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.25s;
+    margin-top: 15px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(94, 23, 235, 0.2);
+}
+
+.legal-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 11px;
+    color: #718096;
+    line-height: 1.4;
+}
+
+.legal-text a {
+    color: #5e17eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.legal-text a:hover {
+    text-decoration: underline;
+}
+
+.alt-action {
+    text-align: center;
+    margin-top: 20px;
+    color: #4a5568;
+    font-size: 13px;
+}
+
+.alt-action a {
+    color: #5e17eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.alt-action a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,20 @@
+
+
+block content 
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Disease Prediction Result
+        link(rel="stylesheet", href="/css/result.css")
+    body
+        .container
+            h2 Prediction Result
+            
+            // Assuming your server injects the result into {{ prediction }}
+            .result-box
+                // Replace this content dynamically from your server
+                span#result #{prediction} 
+
+            a.back-button(href="/prediction") Back to Form
+
+            .footer Powered by AI | Stay healthy

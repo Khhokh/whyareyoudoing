@@ -1,0 +1,68 @@
+link(rel="stylesheet", href="/css/stylelog.css")
+link(rel="stylesheet", href="/css/style.css")
+link(rel="stylesheet", href="/css/styles.css")
+link(rel="stylesheet", href="/css/stylesign.css")
+.master-wrapper
+    .split-layout
+        .info-segment
+            .inner-content
+                .brand-element
+                    .brand-symbol A
+                    .brand-name Aurora
+                
+                h1.headline Begin your innovative journey
+                .tagline Join a community of forward-thinkers and unlock personalized digital experiences designed for the future.
+                
+                .benefit-list
+                    .benefit-item
+                        .benefit-icon ✓
+                        .benefit-desc Intelligent dashboard customization
+                    .benefit-item
+                        .benefit-icon ✓
+                        .benefit-desc Real-time data visualization
+                    .benefit-item
+                        .benefit-icon ✓
+                        .benefit-desc Cross-platform synchronization
+                    .benefit-item
+                        .benefit-icon ✓
+                        .benefit-desc Priority technical support
+        
+        .form-segment
+            h2.form-header Create your account
+            
+            form.sign-up-form
+                .input-block
+                    label.input-label(for="fullname") Full Name
+                    input#name.text-input(type="text" placeholder="Enter your full name" required)
+                
+                .input-block
+                    label.input-label(for="emailaddress") Email Address
+                    input#email.text-input(type="email" placeholder="Enter your email address" required)
+                
+                .input-block
+                    label.input-label(for="newpassword") Create Password
+                    input#password.text-input(type="password" placeholder="Create a strong password" required)
+                    .password-meter
+                        .meter-segment.filled
+                        .meter-segment.filled
+                        .meter-segment
+                        .meter-segment
+                    .helper-text Password should be at least 8 characters with letters, numbers & symbols
+                
+                .input-block
+                    label.input-label(for="confirmpassword") Confirm Password
+                    input#passwordConfirm.text-input(type="password" placeholder="Confirm your password" required)
+                
+                button.action-button(type="submit") Create Account
+                
+                .legal-text
+                    | By creating an account, you agree to our 
+                    a(href="#") Terms of Service
+                    |  and 
+                    a(href="#") Privacy Policy
+            
+            .alt-action
+                | Already have an account? 
+                a(href="#") Sign in
+script(type="module",src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.8.4/axios.min.js')
+script(type="module", src='/js/login.js')

@@ -1,0 +1,105 @@
+link(rel="stylesheet", href="/css/account.css")
+mixin maNavItem(link, text, icon, active)
+  li.ma-nav-item(class=`${active ? 'active' : ''}`)
+    a.ma-nav-link(href=`${link}`)
+      svg.ma-nav-icon
+        use(xlink:href=`img/icons.svg#icon-${icon}`)
+      | #{text}
+
+block content
+  .ma-root
+    .ma-page
+      .ma-container
+        .ma-dashboard
+          // Sidebar
+          aside.ma-sidebar
+            .ma-sidebar-bg
+            .ma-sidebar-content
+              .ma-profile
+                .ma-avatar-wrapper
+                  img.ma-avatar(src=`/img/users/${user.photo}`, alt='User Avatar')
+                  .ma-avatar-status
+                h3.ma-name= user.name
+                p.ma-role Premium Member
+              
+              .ma-nav-section
+                h5.ma-nav-section-title Account
+                ul.ma-nav
+                  +maNavItem('#', 'Settings', 'settings', true)
+                  +maNavItem('#', 'My Bookings', 'briefcase')
+                  +maNavItem('#', 'My Reviews', 'star')
+                  +maNavItem('#', 'Billing', 'credit-card')
+              
+              if user.role === 'admin'
+                .ma-admin
+                  h5.ma-nav-section-title Administration
+                  ul.ma-nav
+                    +maNavItem('#', 'Manage Tours', 'map')
+                    +maNavItem('#', 'Manage Users', 'users')
+                    +maNavItem('#', 'Manage Reviews', 'star')
+                    +maNavItem('#', 'Manage Bookings', 'briefcase')
+          
+          // Main Content
+          main.ma-main
+            section.ma-section
+              .ma-section-header
+                div
+                  h2.ma-section-title Your Profile
+                  p.ma-section-desc Manage your personal information and how it appears to other users on the platform.
+            
+              form.ma-form
+                .ma-form-row
+                  .ma-form-group
+                    label.ma-form-label(for='name') Full Name
+                    input.ma-form-control#name(type='text', value=`${user.name}`, required, name='name')
+                  
+                  .ma-form-group
+                    label.ma-form-label(for='email') Email Address
+                    input.ma-form-control#email(type='email', value=`${user.email}`, required, name='email')
+                
+                .ma-form-group.ma-photo-upload
+                  img.ma-upload-avatar(src=`/img/users/${user.photo}`, alt='User photo')
+                  .ma-upload-controls
+                    button.ma-upload-btn(type='button')
+                      svg.ma-nav-icon(width="20" height="20")
+                        use(xlink:href="img/icons.svg#icon-upload")
+                      | Choose New Photo
+                    p.ma-upload-info Recommended: JPG, PNG. Maximum 2MB
+                
+                .ma-divider
+                
+                .ma-form-actions
+                  button.ma-btn.ma-btn-outline(type='button') Cancel
+                  button.ma-btn(type='submit') Save Changes
+            
+            section.ma-section
+              .ma-section-header
+                div
+                  h2.ma-section-title Security
+                  p.ma-section-desc Update your password to keep your account secure.
+            
+              form.ma-form
+                .ma-form-group
+                  label.ma-form-label(for='password-current') Current Password
+                  input.ma-form-control#password-current(type='password', placeholder='Enter your current password', required, minlength='8')
+                
+                .ma-form-row
+                  .ma-form-group
+                    label.ma-form-label(for='password') New Password
+                    input.ma-form-control#password(type='password', placeholder='Enter a new password', required, minlength='8')
+                    .ma-password-strength
+                      .ma-strength-bar.weak
+                    .ma-password-hint
+                      svg.ma-nav-icon(width="14" height="14")
+                        use(xlink:href="img/icons.svg#icon-info")
+                      | Password should be at least 8 characters
+                  
+                  .ma-form-group
+                    label.ma-form-label(for='password-confirm') Confirm New Password
+                    input.ma-form-control#password-confirm(type='password', placeholder='Confirm your new password', required, minlength='8')
+                
+                .ma-divider
+                
+                .ma-form-actions
+                  button.ma-btn.ma-btn-outline(type='button') Cancel
+                  button.ma-btn(type='submit') Update Password
