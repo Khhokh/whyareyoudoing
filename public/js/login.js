@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /////////////////////////////////////////////////////////////////////////
-document.addEventListener('DOMContentLoaded', () => {
+
     const form = document.querySelector('.form--login');
     if (form) {
         form.addEventListener('submit', e => {
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             login(email, password);
         });
     }
-});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.sign-up-form');
