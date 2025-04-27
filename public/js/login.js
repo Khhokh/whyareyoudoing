@@ -29,7 +29,8 @@ const login =async (email, password) => {
     }catch(err){
       console.log(email);
       console.log(password);
-        showAlert('error',err.response.data.message);
+      showAlert('error',err);
+      console.log(err);
     }
 
 };
