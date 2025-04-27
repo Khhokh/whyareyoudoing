@@ -16,7 +16,7 @@ router.get('/predictions',viewsController.getPredcitonsDoc);
 router.post('/predict',viewsController.getPredcitons);
 router.get('/prediction',viewsController.getPredcitonsForm);
 
-router.get('/appointment',authController.protect,authController.isLoggedIn,viewsController.getAppointment);
+router.get('/appointment',viewsController.getAppointment);
 
 router.get('/medicat',authController.isLoggedIn,viewsController.getMedicat);
 router.get('/tour/:slug',authController.protect,authController.isLoggedIn,viewsController.getTour);
