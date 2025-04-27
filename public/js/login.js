@@ -7,6 +7,7 @@ import { updateSettings } from './updateSettings.js';
 const login =async (email, password) => {
     // console.log(email,password);
     try{
+      console.log('hhh');
         const res = await axios({
         method:'POST',
         url:'http://127.0.0.1:3001/api/v1/users/login',
@@ -14,8 +15,11 @@ const login =async (email, password) => {
             email,
             password
         },
-        withCredentials: true
+          
+          
+       // withCredentials: true
     });
+    console.log('hhh');
     if(res.data.status == 'success'){
         showAlert('success','Logged in successfully!');
         window.setTimeout(()=>{
@@ -225,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('password1').value;
             login(email, password);
         });
-    }
+    };
 
 
 document.addEventListener('DOMContentLoaded', () => {
