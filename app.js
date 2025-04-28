@@ -38,6 +38,8 @@ app.use(cors({
   credentials: true                                // if you send cookies
 }));
 
+app.options('*', cors());
+
 //////////////////i have add for the cookie sending policy/////////////////// 
 app.use(
   helmet.contentSecurityPolicy({
