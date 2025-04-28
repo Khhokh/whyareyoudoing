@@ -8,6 +8,7 @@ const reviewRouter = require('./routes/reviewRouts');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 const appointmentRouter = require('./routes/appointmentRouter');
 const viewRouter = require('./routes/viewRouts');
@@ -30,6 +31,12 @@ if(process.env.NODE_ENV ==='development'){
   app.use(morgan('dev'));
 }
 
+
+
+app.use(cors({
+  origin: 'https://lastonefortoday.onrender.com',  // allow your deployed frontend
+  credentials: true                                // if you send cookies
+}));
 
 //////////////////i have add for the cookie sending policy/////////////////// 
 app.use(
